@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trauma Raquimedular — Entenda e Previna</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --blue-50: #E6F1FB;
+    --blue-100: #B5D4F4;
+    --blue-600: #185FA5;
+    --blue-800: #0C447C;
+    --blue-900: #042C53;
+    --teal-50: #E1F5EE;
+    --teal-100: #9FE1CB;
+    --teal-600: #0F6E56;
+    --teal-800: #085041;
+    --coral-50: #FAECE7;
+    --coral-100: #F5C4B3;
+    --coral-600: #993C1D;
+    --coral-800: #712B13;
+    --amber-50: #FAEEDA;
+    --amber-100: #FAC775;
+    --amber-600: #854F0B;
+    --amber-800: #633806;
+    --purple-50: #EEEDFE;
+    --purple-100: #CECBF6;
+    --purple-600: #534AB7;
+    --purple-800: #3C3489;
+    --gray-50: #F1EFE8;
+    --gray-100: #D3D1C7;
+    --gray-400: #888780;
+    --gray-600: #5F5E5A;
+    --gray-800: #444441;
+    --green-50: #EAF3DE;
+    --green-100: #C0DD97;
+    --green-600: #3B6D11;
+    --green-800: #27500A;
+    --red-50: #FCEBEB;
+    --red-100: #F7C1C1;
+    --red-600: #A32D2D;
+    --red-800: #791F1F;
+  }
+
+  body {
+    font-family: Georgia, 'Times New Roman', serif;
+    background: #f8f6f1;
+    color: #1a1a18;
+    line-height: 1.75;
+  }
+
+  /* HERO */
+  .hero {
+    background: var(--blue-900);
+    color: #fff;
+    padding: 4rem 2rem 3rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -60px; left: 50%;
+    transform: translateX(-50%);
+    width: 600px; height: 600px;
+    border-radius: 50%;
+    background: var(--blue-800);
+    opacity: 0.25;
+    pointer-events: none;
+  }
+  .hero-tag {
+    display: inline-block;
+    font-family: 'Arial', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    background: var(--blue-600);
+    color: var(--blue-100);
+    padding: 4px 14px;
+    border-radius: 20px;
+    margin-bottom: 1.25rem;
+  }
+  .hero h1 {
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+  }
+  .hero h1 span { color: var(--blue-100); }
+  .hero p {
+    font-family: 'Arial', sans-serif;
+    font-size: 1.1rem;
+    color: #c5d9ef;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+  }
+  .hero-stat-row {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+  }
+  .hero-stat {
+    text-align: center;
+  }
+  .hero-stat strong {
+    display: block;
+    font-family: 'Arial', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--blue-100);
+    line-height: 1;
+  }
+  .hero-stat span {
+    font-family: 'Arial', sans-serif;
+    font-size: 12px;
+    color: #8aadcf;
+    letter-spacing: 0.05em;
+  }
+
+  /* LAYOUT */
+  .container {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 0 1.25rem;
+  }
+
+  /* SECTION TITLES */
+  .section {
+    padding: 3.5rem 1.25rem;
+    max-width: 860px;
+    margin: 0 auto;
+  }
+  .section-label {
+    font-family: 'Arial', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--blue-600);
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+  .section h2 {
+    font-size: clamp(1.4rem, 3vw, 1.9rem);
+    font-weight: 700;
+    color: var(--blue-900);
+    line-height: 1.3;
+    margin-bottom: 1.25rem;
+  }
+  .section p {
+    font-size: 1.05rem;
+    color: #333;
+    margin-bottom: 1rem;
+  }
+
+  /* ANATOMY VISUAL */
+  .spine-card {
+    background: var(--blue-50);
+    border: 1px solid var(--blue-100);
+    border-radius: 16px;
+    padding: 2rem;
+    margin: 2rem 0;
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+  .spine-diagram {
+    flex: 0 0 140px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    font-family: 'Arial', sans-serif;
+    font-size: 12px;
+  }
+  .spine-seg {
+    width: 100%;
+    padding: 6px 12px;
+    border-radius: 6px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 0.04em;
+  }
+  .seg-c { background: var(--coral-50); color: var(--coral-800); border: 1px solid var(--coral-100); }
+  .seg-t { background: var(--blue-50); color: var(--blue-800); border: 1px solid var(--blue-100); }
+  .seg-l { background: var(--teal-50); color: var(--teal-800); border: 1px solid var(--teal-100); }
+  .seg-s { background: var(--amber-50); color: var(--amber-800); border: 1px solid var(--amber-100); }
+  .seg-label {
+    font-size: 10px;
+    color: var(--gray-600);
+    margin-top: 2px;
+    margin-bottom: 4px;
+  }
+  .spine-info { flex: 1; min-width: 220px; }
+  .spine-info h3 { font-size: 1.1rem; color: var(--blue-900); margin-bottom: 0.75rem; }
+  .spine-info p { font-size: 0.95rem; color: #444; }
+
+  /* HIGHLIGHT BOX */
+  .highlight {
+    border-left: 4px solid var(--blue-600);
+    background: var(--blue-50);
+    padding: 1.1rem 1.4rem;
+    border-radius: 0 10px 10px 0;
+    margin: 1.5rem 0;
+    font-family: 'Arial', sans-serif;
+    font-size: 0.97rem;
+    color: var(--blue-800);
+    line-height: 1.6;
+  }
+  .highlight strong { color: var(--blue-900); }
+
+  /* DIVIDER */
+  .divider {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 0;
+  }
+  .divider-accent {
+    border: none;
+    border-top: 3px solid var(--blue-100);
+    margin: 0;
+  }
+
+  /* CARDS GRID */
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+    margin: 1.5rem 0;
+  }
+  .card {
+    background: #fff;
+    border: 1px solid #e0ddd5;
+    border-radius: 14px;
+    padding: 1.25rem;
+  }
+  .card-icon {
+    width: 40px; height: 40px;
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px;
+    margin-bottom: 0.75rem;
+  }
+  .card h3 {
+    font-family: 'Arial', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #1a1a18;
+    margin-bottom: 0.4rem;
+  }
+  .card p {
+    font-family: 'Arial', sans-serif;
+    font-size: 0.88rem;
+    color: #555;
+    margin: 0;
+    line-height: 1.55;
+  }
+
+  /* SEVERITY TABLE */
+  .severity-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    margin: 1.5rem 0;
+  }
+  .sev-card {
+    border-radius: 12px;
+    padding: 1.25rem;
+    border: 1px solid;
+  }
+  .sev-card .sev-title {
+    font-family: 'Arial', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+  .sev-card h3 {
+    font-family: Georgia, serif;
+    font-size: 1.05rem;
+    margin-bottom: 0.4rem;
+  }
+  .sev-card p {
+    font-family: 'Arial', sans-serif;
+    font-size: 0.85rem;
+    line-height: 1.5;
+    margin: 0;
+  }
+  .sev-complete { background: var(--coral-50); border-color: var(--coral-100); color: var(--coral-800); }
+  .sev-complete h3 { color: var(--coral-800); }
+  .sev-incomplete { background: var(--amber-50); border-color: var(--amber-100); color: var(--amber-800); }
+  .sev-incomplete h3 { color: var(--amber-800); }
+  .sev-neuro { background: var(--purple-50); border-color: var(--purple-100); color: var(--purple-800); }
+  .sev-neuro h3 { color: var(--purple-800); }
+
+  /* CAUSES */
+  .cause-row {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.9rem 0;
+    border-bottom: 1px solid #ede9e0;
+    font-family: 'Arial', sans-serif;
+  }
+  .cause-row:last-child { border-bottom: none; }
+  .cause-bar-wrap {
+    flex: 1;
+    background: #ede9e0;
+    border-radius: 99px;
+    height: 10px;
+    overflow: hidden;
+  }
+  .cause-bar {
+    height: 100%;
+    border-radius: 99px;
+    background: var(--blue-600);
+  }
+  .cause-name { min-width: 140px; font-size: 0.9rem; color: #333; }
+  .cause-pct { min-width: 42px; text-align: right; font-size: 0.88rem; color: var(--blue-800); font-weight: 700; }
+
+  /* SYMPTOM CHIPS */
+  .chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 1.25rem 0;
+  }
+  .chip {
+    font-family: 'Arial', sans-serif;
+    font-size: 0.85rem;
+    padding: 5px 14px;
+    border-radius: 99px;
+    border: 1px solid;
+  }
+  .chip-red { background: var(--red-50); color: var(--red-800); border-color: var(--red-100); }
+  .chip-blue { background: var(--blue-50); color: var(--blue-800); border-color: var(--blue-100); }
+  .chip-teal { background: var(--teal-50); color: var(--teal-800); border-color: var(--teal-100); }
+
+  /* TIMELINE */
+  .timeline { position: relative; padding-left: 2rem; margin: 1.5rem 0; }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 8px; top: 8px; bottom: 8px;
+    width: 2px;
+    background: var(--blue-100);
+  }
+  .tl-item { position: relative; margin-bottom: 1.5rem; }
+  .tl-dot {
+    position: absolute;
+    left: -1.6rem;
+    top: 4px;
+    width: 14px; height: 14px;
+    border-radius: 50%;
+    background: var(--blue-600);
+    border: 2px solid var(--blue-50);
+    box-shadow: 0 0 0 2px var(--blue-100);
+  }
+  .tl-item h3 {
+    font-family: 'Arial', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--blue-900);
+    margin-bottom: 0.25rem;
+  }
+  .tl-item p {
+    font-family: 'Arial', sans-serif;
+    font-size: 0.88rem;
+    color: #555;
+    line-height: 1.55;
+    margin: 0;
+  }
+
+  /* EMERGENCY BOX */
+  .emergency {
+    background: var(--red-50);
+    border: 2px solid var(--red-100);
+    border-radius: 16px;
+    padding: 1.5rem 1.75rem;
+    margin: 2rem 0;
+  }
+  .emergency-title {
+    font-family: 'Arial', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--red-800);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 0.75rem;
+  }
+  .emergency ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .emergency ul li {
+    font-family: 'Arial', sans-serif;
+    font-size: 0.92rem;
+    color: var(--red-800);
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .emergency ul li::before {
+    content: '✕';
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  /* DO BOX */
+  .do-box {
+    background: var(--green-50);
+    border: 2px solid var(--green-100);
+    border-radius: 16px;
+    padding: 1.5rem 1.75rem;
+    margin: 2rem 0;
+  }
+  .do-box-title {
+    font-family: 'Arial', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--green-800);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 0.75rem;
+  }
+  .do-box ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .do-box ul li {
+    font-family: 'Arial', sans-serif;
+    font-size: 0.92rem;
+    color: var(--green-800);
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .do-box ul li::before {
+    content: '✓';
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  /* PREVENTION GRID */
+  .prev-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin: 1.5rem 0;
+  }
+  .prev-card {
+    background: #fff;
+    border: 1px solid #e0ddd5;
+    border-radius: 12px;
+    padding: 1.1rem;
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+  }
+  .prev-icon {
+    width: 36px; height: 36px;
+    border-radius: 8px;
+    flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px;
+  }
+  .prev-card h3 {
+    font-family: 'Arial', sans-serif;
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: #1a1a18;
+    margin-bottom: 2px;
+  }
+  .prev-card p {
+    font-family: 'Arial', sans-serif;
+    font-size: 0.82rem;
+    color: #666;
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  /* PHONE BOX */
+  .phone-box {
+    background: var(--blue-900);
+    color: #fff;
+    border-radius: 16px;
+    padding: 2rem;
+    text-align: center;
+    margin: 2rem 0;
+  }
+  .phone-box h3 {
+    font-size: 1.15rem;
+    margin-bottom: 0.5rem;
+    color: #fff;
+  }
+  .phone-number {
+    font-family: 'Arial', sans-serif;
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--blue-100);
+    letter-spacing: 0.05em;
+    display: block;
+    margin: 0.5rem 0;
+  }
+  .phone-box p {
+    font-family: 'Arial', sans-serif;
+    font-size: 0.88rem;
+    color: #8aadcf;
+    margin: 0;
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--blue-900);
+    color: #8aadcf;
+    padding: 2rem 1.25rem;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    font-size: 0.82rem;
+    line-height: 1.7;
+  }
+  footer strong { color: var(--blue-100); }
+
+  /* SECTION BG ALTERNATES */
+  .bg-light { background: #f8f6f1; }
+  .bg-white { background: #fff; }
+  .bg-blue { background: var(--blue-50); }
+
+  @media (max-width: 600px) {
+    .hero { padding: 3rem 1.25rem 2.5rem; }
+    .spine-card { flex-direction: column; }
+    .spine-diagram { flex-direction: row; flex-wrap: wrap; justify-content: center; }
+    .spine-seg { width: auto; padding: 5px 10px; font-size: 12px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-tag">Saúde &amp; Prevenção</div>
+  <h1>Trauma<br><span>Raquimedular</span></h1>
+  <p>O que é, como acontece, o que sentir e — principalmente — como ajudar e prevenir.</p>
+  <div class="hero-stat-row">
+    <div class="hero-stat">
+      <strong>~10 mil</strong>
+      <span>novos casos/ano no Brasil</span>
+    </div>
+    <div class="hero-stat">
+      <strong>80%</strong>
+      <span>são homens jovens</span>
+    </div>
+    <div class="hero-stat">
+      <strong>1ª causa</strong>
+      <span>acidente de trânsito</span>
+    </div>
+  </div>
+</header>
+
+<!-- O QUE É -->
+<div class="bg-white">
+<section class="section">
+  <span class="section-label">Entendendo a lesão</span>
+  <h2>O que é o trauma raquimedular?</h2>
+  <p>A <strong>coluna vertebral</strong> é a estrutura óssea que protege a <strong>medula espinhal</strong> — o principal "cabo de comunicação" do nosso corpo, responsável por levar as ordens do cérebro para os músculos e trazer as sensações de volta.</p>
+  <p>Quando essa região sofre um trauma — por impacto, queda, acidente ou outro mecanismo violento —, pode ocorrer fratura, luxação ou compressão das vértebras. Isso pode danificar a medula espinhal e interromper parcial ou totalmente essa comunicação.</p>
+  <p>Chamamos isso de <strong>Trauma Raquimedular (TRM)</strong>.</p>
+
+  <div class="spine-card">
+    <div class="spine-diagram">
+      <div class="spine-seg seg-c">Cervical</div>
+      <div class="seg-label">C1 a C8 — Pescoço</div>
+      <div class="spine-seg seg-t">Torácica</div>
+      <div class="seg-label">T1 a T12 — Tórax</div>
+      <div class="spine-seg seg-l">Lombar</div>
+      <div class="seg-label">L1 a L5 — Lombar</div>
+      <div class="spine-seg seg-s">Sacral</div>
+      <div class="seg-label">S1 a S5 — Sacro</div>
+    </div>
+    <div class="spine-info">
+      <h3>Onde a lesão ocorre importa muito</h3>
+      <p>A coluna tem quatro regiões. <strong>Quanto mais alto o nível da lesão, mais partes do corpo são afetadas.</strong></p>
+      <br>
+      <p>Uma lesão <strong>cervical</strong> (pescoço) pode afetar braços, tronco e pernas. Já uma lesão <strong>lombar</strong> costuma comprometer apenas os membros inferiores.</p>
+      <br>
+      <p>É por isso que médicos sempre avaliam exatamente qual vértebra foi lesionada.</p>
+    </div>
+  </div>
+
+  <div class="highlight">
+    <strong>Importante:</strong> A medula espinhal não é o mesmo que a <em>coluna vertebral</em>. A coluna são os ossos; a medula é o tecido nervoso dentro desses ossos. É a medula que, quando lesionada, causa as consequências mais graves.
+  </div>
+</section>
+</div>
+
+<hr class="divider">
+
+<!-- CAUSAS -->
+<div class="bg-light">
+<section class="section">
+  <span class="section-label">Por que acontece</span>
+  <h2>Principais causas no Brasil</h2>
+  <p>A maioria dos casos é <strong>evitável</strong>. Conhecer as causas é o primeiro passo para a prevenção.</p>
+
+  <div style="margin-top:1.5rem;">
+    <div class="cause-row">
+      <span class="cause-name">🚗 Acidentes de trânsito</span>
+      <div class="cause-bar-wrap"><div class="cause-bar" style="width:40%"></div></div>
+      <span class="cause-pct">~40%</span>
+    </div>
+    <div class="cause-row">
+      <span class="cause-name">🔫 Violência / PAF</span>
+      <div class="cause-bar-wrap"><div class="cause-bar" style="width:28%"></div></div>
+      <span class="cause-pct">~28%</span>
+    </div>
+    <div class="cause-row">
+      <span class="cause-name">🪜 Quedas</span>
+      <div class="cause-bar-wrap"><div class="cause-bar" style="width:18%"></div></div>
+      <span class="cause-pct">~18%</span>
+    </div>
+    <div class="cause-row">
+      <span class="cause-name">🏊 Mergulho em água rasa</span>
+      <div class="cause-bar-wrap"><div class="cause-bar" style="width:8%"></div></div>
+      <span class="cause-pct">~8%</span>
+    </div>
+    <div class="cause-row">
+      <span class="cause-name">⚽ Esportes / outros</span>
+      <div class="cause-bar-wrap"><div class="cause-bar" style="width:6%"></div></div>
+      <span class="cause-pct">~6%</span>
+    </div>
+  </div>
+
+  <div class="highlight" style="margin-top:1.75rem;">
+    <strong>Por que jovens homens?</strong> Comportamentos de risco como excesso de velocidade, não uso de cinto, ingestão de álcool antes de dirigir e mergulho em locais desconhecidos são mais frequentes nesse grupo. Informação e consciência salvam vidas.
+  </div>
+</section>
+</div>
+
+<hr class="divider">
+
+<!-- TIPOS -->
+<div class="bg-white">
+<section class="section">
+  <span class="section-label">Como a lesão se apresenta</span>
+  <h2>Tipos de lesão: completa e incompleta</h2>
+  <p>Nem todo trauma raquimedular resulta da mesma forma. A gravidade depende do quanto da medula foi lesionada.</p>
+
+  <div class="severity-grid">
+    <div class="sev-card sev-complete">
+      <div class="sev-title">Lesão Completa</div>
+      <h3>Perda total</h3>
+      <p>Não há nenhuma função motora ou sensitiva abaixo do nível da lesão. O sinal nervoso é completamente interrompido.</p>
+    </div>
+    <div class="sev-card sev-incomplete">
+      <div class="sev-title">Lesão Incompleta</div>
+      <h3>Perda parcial</h3>
+      <p>Há alguma preservação de função — pode ser sensação, movimento ou ambos — abaixo do nível da lesão.</p>
+    </div>
+    <div class="sev-card sev-neuro">
+      <div class="sev-title">Sem lesão medular</div>
+      <h3>Trauma ósseo</h3>
+      <p>A vértebra pode fraturar sem lesar a medula. Nesse caso, as consequências neurológicas podem ser menores ou inexistentes.</p>
+    </div>
+  </div>
+
+  <p style="margin-top:1rem;">Termos que você pode ouvir:</p>
+  <ul style="font-size:0.95rem; color:#444; padding-left:1.4rem; line-height:2;">
+    <li><strong>Tetraplegia (ou quadriplegia):</strong> paralisia dos quatro membros — lesão cervical.</li>
+    <li><strong>Paraplegia:</strong> paralisia dos membros inferiores — lesão torácica, lombar ou sacral.</li>
+    <li><strong>Monoplegia:</strong> paralisia de um único membro.</li>
+    <li><strong>Paresia:</strong> fraqueza muscular, sem paralisia completa.</li>
+  </ul>
+</section>
+</div>
+
+<hr class="divider">
+
+<!-- SINTOMAS -->
+<div class="bg-blue">
+<section class="section">
+  <span class="section-label">O que sentir após um trauma</span>
+  <h2>Sinais e sintomas: quando suspeitar?</h2>
+  <p>Os sintomas variam conforme o nível e a gravidade da lesão. Conheça os mais comuns:</p>
+
+  <p style="font-family: Arial; font-size:0.9rem; font-weight:700; color:var(--red-800); margin-bottom:4px;">⚠ Sintomas de alerta imediato</p>
+  <div class="chips">
+    <span class="chip chip-red">Paralisia de membros</span>
+    <span class="chip chip-red">Incapacidade de se mover</span>
+    <span class="chip chip-red">Perda de sensibilidade</span>
+    <span class="chip chip-red">Dificuldade para respirar</span>
+    <span class="chip chip-red">Dor intensa na coluna</span>
+    <span class="chip chip-red">Sensação de choque elétrico</span>
+  </div>
+
+  <p style="font-family: Arial; font-size:0.9rem; font-weight:700; color:var(--blue-800); margin-bottom:4px; margin-top:1rem;">Sintomas que podem aparecer gradualmente</p>
+  <div class="chips">
+    <span class="chip chip-blue">Fraqueza muscular</span>
+    <span class="chip chip-blue">Formigamento</span>
+    <span class="chip chip-blue">Dificuldade de equilíbrio</span>
+    <span class="chip chip-blue">Alteração no controle urinário</span>
+    <span class="chip chip-blue">Alteração no controle intestinal</span>
+    <span class="chip chip-blue">Disfunção sexual</span>
+  </div>
+
+  <p style="font-family: Arial; font-size:0.9rem; font-weight:700; color:var(--teal-800); margin-bottom:4px; margin-top:1rem;">Sintomas do sistema nervoso autônomo</p>
+  <div class="chips">
+    <span class="chip chip-teal">Queda na pressão arterial</span>
+    <span class="chip chip-teal">Batimento cardíaco lento</span>
+    <span class="chip chip-teal">Dificuldade de regular temperatura</span>
+    <span class="chip chip-teal">Sudorese excessiva</span>
+  </div>
+
+  <div class="highlight" style="margin-top:1.5rem;">
+    <strong>Atenção:</strong> Em alguns casos, os sintomas podem demorar horas para aparecer, especialmente se houver inchaço progressivo na medula. Nunca ignore uma dor intensa na coluna após um acidente, mesmo que a pessoa consiga se mover inicialmente.
+  </div>
+</section>
+</div>
+
+<hr class="divider">
+
+<!-- PRIMEIROS SOCORROS -->
+<div class="bg-white">
+<section class="section">
+  <span class="section-label">O que fazer na hora</span>
+  <h2>Primeiros socorros: salve sem causar mais dano</h2>
+  <p>O socorro correto nas primeiras horas pode determinar a diferença entre recuperação parcial e paralisia permanente. A regra de ouro é simples: <strong>não mova a vítima.</strong></p>
+
+  <div class="do-box">
+    <div class="do-box-title">✓ Faça isso</div>
+    <ul>
+      <li>Ligue imediatamente para o <strong>SAMU (192)</strong> ou <strong>Bombeiros (193)</strong>.</li>
+      <li>Mantenha a vítima quieta e imóvel exatamente como está.</li>
+      <li>Acalme a pessoa, explique que o socorro está a caminho.</li>
+      <li>Se precisar desobstruir a via aérea, faça com cuidado sem virar a cabeça.</li>
+      <li>Monitore a respiração até a chegada do socorro.</li>
+      <li>Impeça que curiosos movimentem a vítima.</li>
+    </ul>
+  </div>
+
+  <div class="emergency">
+    <div class="emergency-title">✕ Nunca faça isso</div>
+    <ul>
+      <li>Não puxe, levante ou arraste a vítima sem imobilização adequada.</li>
+      <li>Não vire ou torça o pescoço da pessoa.</li>
+      <li>Não dê água ou alimento enquanto aguarda o socorro.</li>
+      <li>Não remova o capacete de uma vítima de acidente de moto (exceto profissionais treinados).</li>
+      <li>Não carregue a vítima em posição sentada ou curvada.</li>
+      <li>Não tente "colocar a vértebra no lugar" por conta própria.</li>
+    </ul>
+  </div>
+
+  <div class="phone-box">
+    <h3>Em caso de emergência, ligue agora</h3>
+    <span class="phone-number">192</span>
+    <p>SAMU — Serviço de Atendimento Móvel de Urgência<br>Disponível 24h, 7 dias por semana, em todo o Brasil.</p>
+  </div>
+</section>
+</div>
+
+<hr class="divider">
+
+<!-- DIAGNÓSTICO E TRATAMENTO -->
+<div class="bg-light">
+<section class="section">
+  <span class="section-label">No hospital</span>
+  <h2>Como é feito o diagnóstico e tratamento?</h2>
+  <p>O tratamento começa na chegada ao serviço de emergência e envolve várias etapas.</p>
+
+  <div class="timeline">
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <h3>Estabilização inicial</h3>
+      <p>A prioridade é manter a pressão arterial e a respiração estáveis. A imobilização da coluna com colar cervical e prancha rígida é mantida até a avaliação completa.</p>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <h3>Exames de imagem</h3>
+      <p>Raio-X, tomografia computadorizada (TC) e ressonância magnética (RM) são usados para identificar exatamente qual vértebra foi afetada e se há compressão da medula.</p>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <h3>Avaliação neurológica</h3>
+      <p>Médicos avaliam força, sensibilidade e reflexos para classificar a lesão pela escala ASIA — uma ferramenta que mede a gravidade do comprometimento neurológico.</p>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <h3>Cirurgia (quando necessário)</h3>
+      <p>Em alguns casos é preciso descomprimir a medula e fixar as vértebras cirurgicamente. A janela ideal é nas primeiras 24 horas após o trauma.</p>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <h3>Reabilitação multidisciplinar</h3>
+      <p>Fisioterapia, terapia ocupacional, fonoaudiologia, psicologia e serviço social compõem a equipe que acompanha a pessoa na recuperação — processo que pode durar meses ou anos.</p>
+    </div>
+  </div>
+
+  <div class="highlight">
+    <strong>A medula se recupera?</strong> A capacidade de regeneração da medula espinhal é limitada, mas a reabilitação intensiva pode melhorar significativamente a qualidade de vida e recuperar funções, especialmente nas lesões incompletas. Pesquisas com células-tronco e estimulação elétrica são áreas promissoras.
+  </div>
+</section>
+</div>
+
+<hr class="divider">
+
+<!-- VIDA APÓS A LESÃO -->
+<div class="bg-white">
+<section class="section">
+  <span class="section-label">Qualidade de vida</span>
+  <h2>Vida após o trauma raquimedular</h2>
+  <p>Um TRM muda a vida, mas não a encerra. Com suporte adequado, muitas pessoas retomam atividades profissionais, esportivas e sociais.</p>
+
+  <div class="cards">
+    <div class="card">
+      <div class="card-icon" style="background:var(--teal-50);">♿</div>
+      <h3>Tecnologias assistivas</h3>
+      <p>Cadeiras de rodas motorizadas, dispositivos de comunicação e softwares por controle ocular ampliam a autonomia.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon" style="background:var(--blue-50);">🏋️</div>
+      <h3>Esporte adaptado</h3>
+      <p>Atletismo, natação, basquete em cadeira de rodas, tênis, handbike e paracanoa são práticas acessíveis e terapêuticas.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon" style="background:var(--purple-50);">🧠</div>
+      <h3>Saúde mental</h3>
+      <p>Depressão e ansiedade são comuns após a lesão. Acompanhamento psicológico é parte essencial do tratamento.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon" style="background:var(--amber-50);">🏠</div>
+      <h3>Acessibilidade</h3>
+      <p>Adaptações na casa, uso de rampas, barras de apoio e banheiros adaptados fazem grande diferença no dia a dia.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon" style="background:var(--coral-50);">💼</div>
+      <h3>Retorno ao trabalho</h3>
+      <p>Com adaptações no ambiente e funções compatíveis, muitos voltam ao mercado de trabalho — inclusive em cargos de liderança.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon" style="background:var(--green-50);">🤝</div>
+      <h3>Rede de apoio</h3>
+      <p>Família, amigos e grupos de suporte são fundamentais. Cuidadores também precisam de suporte para evitar sobrecarga.</p>
+    </div>
+  </div>
+</section>
+</div>
+
+<hr class="divider">
+
+<!-- PREVENÇÃO -->
+<div class="bg-blue">
+<section class="section">
+  <span class="section-label">Porque a maioria é evitável</span>
+  <h2>Como prevenir o trauma raquimedular</h2>
+  <p>Pequenas atitudes cotidianas protegem você e quem você ama.</p>
+
+  <div class="prev-grid">
+    <div class="prev-card">
+      <div class="prev-icon" style="background:var(--coral-50);">🚗</div>
+      <div>
+        <h3>Use sempre o cinto</h3>
+        <p>Em todos os bancos, em todas as viagens — sem exceção.</p>
+      </div>
+    </div>
+    <div class="prev-card">
+      <div class="prev-icon" style="background:var(--coral-50);">🍺</div>
+      <div>
+        <h3>Álcool zero ao volante</h3>
+        <p>Não beba se for dirigir. Não dirija se bebeu. Simples assim.</p>
+      </div>
+    </div>
+    <div class="prev-card">
+      <div class="prev-icon" style="background:var(--blue-50);">🏍️</div>
+      <div>
+        <h3>Capacete sempre</h3>
+        <p>Para motos e bicicletas, em todas as situações, mesmo perto de casa.</p>
+      </div>
+    </div>
+    <div class="prev-card">
+      <div class="prev-icon" style="background:var(--teal-50);">🏊</div>
+      <div>
+        <h3>Mergulho seguro</h3>
+        <p>Nunca mergulhe de cabeça em água de profundidade desconhecida.</p>
+      </div>
+    </div>
+    <div class="prev-card">
+      <div class="prev-icon" style="background:var(--amber-50);">🪜</div>
+      <div>
+        <h3>Cuidado com quedas</h3>
+        <p>Idosos devem evitar tapetes soltos, pisos escorregadios e instalar barras de apoio.</p>
+      </div>
+    </div>
+    <div class="prev-card">
+      <div class="prev-icon" style="background:var(--purple-50);">📱</div>
+      <div>
+        <h3>Celular longe ao dirigir</h3>
+        <p>Distração é uma das principais causas de acidentes graves.</p>
+      </div>
+    </div>
+    <div class="prev-card">
+      <div class="prev-icon" style="background:var(--green-50);">🧒</div>
+      <div>
+        <h3>Cadeirinha para crianças</h3>
+        <p>Crianças em cadeirinhas adequadas têm proteção muito maior em acidentes.</p>
+      </div>
+    </div>
+    <div class="prev-card">
+      <div class="prev-icon" style="background:var(--coral-50);">🏗️</div>
+      <div>
+        <h3>Segurança no trabalho</h3>
+        <p>Use EPI, respeite normas em altura e exija condições seguras no trabalho.</p>
+      </div>
+    </div>
+  </div>
+</section>
+</div>
+
+<hr class="divider">
+
+<!-- DIREITOS -->
+<div class="bg-white">
+<section class="section">
+  <span class="section-label">Você tem direitos</span>
+  <h2>Direitos das pessoas com lesão medular no Brasil</h2>
+  <p>A legislação brasileira garante uma série de benefícios e proteções às pessoas com TRM e deficiência física.</p>
+
+  <div class="cards">
+    <div class="card">
+      <h3>BPC — Benefício de Prestação Continuada</h3>
+      <p>Um salário mínimo mensal para pessoas com deficiência em situação de vulnerabilidade econômica.</p>
+    </div>
+    <div class="card">
+      <h3>Aposentadoria por invalidez</h3>
+      <p>Para segurados do INSS impossibilitados de trabalhar permanentemente.</p>
+    </div>
+    <div class="card">
+      <h3>Isenção de impostos</h3>
+      <p>Isenção de IPI, ICMS e IOF na compra de veículo adaptado.</p>
+    </div>
+    <div class="card">
+      <h3>Passe livre</h3>
+      <p>Transporte interestadual gratuito e vagas reservadas em transporte público.</p>
+    </div>
+    <div class="card">
+      <h3>Fornecimento de órteses</h3>
+      <p>Cadeira de rodas, próteses e equipamentos pelo SUS, conforme necessidade clínica.</p>
+    </div>
+    <div class="card">
+      <h3>Reabilitação pelo SUS</h3>
+      <p>Fisioterapia, terapia ocupacional e outros serviços de reabilitação na rede pública.</p>
+    </div>
+  </div>
+</section>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p><strong>Esta página tem fins educativos.</strong></p>
+  <p>Ela não substitui consulta médica ou avaliação profissional.<br>
+  Diante de qualquer suspeita de lesão na coluna, procure imediatamente o serviço de emergência.</p>
+  <br>
+  <p>Emergência: <strong>192 (SAMU)</strong> · <strong>193 (Bombeiros)</strong> · <strong>190 (Polícia Militar)</strong></p>
+  <br>
+  <p style="font-size:0.76rem; color:#506a82;">Referências: Ministério da Saúde do Brasil · Sociedade Brasileira de Neurocirurgia · American Spinal Injury Association (ASIA)</p>
+</footer>
+
+</body>
+</html>
